@@ -5,6 +5,7 @@ Clone this repository to your local machine.
 Install the required dependencies using pip:
 
 pip install opencv-python numpy
+
 pip install cvzone
 
 Connect a webcam to your computer.
