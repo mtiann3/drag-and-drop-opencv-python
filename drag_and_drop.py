@@ -11,6 +11,23 @@ colorR = (255,0,255)
 cx, cy, w, h = 100,100,200,200
 
 
+class DragRect():
+    def __init__(self,posCenter, size=[200,200]):
+        self.posCenter = posCenter
+        self.size = size
+
+    
+    def update(self,cursor):
+        cx, cy = self.posCenter
+        w, h = self.size
+
+        # If the finger is in the rectangle region
+        if cx-w//2<cursor[0]<cx+w//2 and  cy-h//2<cursor[1]<cy+h//2:
+                self.posCenter = cursor
+        
+
+rect = DragRect([150,150])
+
 
 while True:
 
@@ -30,15 +47,12 @@ while True:
         print(length)
         if length<30:
             cursor = lmList1[8][:2]
-
-
-            if cx-w//2<cursor[0]<cx+w//2 and  cy-h//2<cursor[1]<cy+h//2:
-                colorR = 0,255,0
-                cx,cy = cursor
-
-            else:
-                colorR = (255,0,255)
-
+            # call the update here
+            rect.update(cursor)
+           
+    # draw
+    cx, cy = rect.posCenter
+    w, h = rect.size        
     cv.rectangle(img,(cx-w//2, cy-h//2),(cx+w//2, cy+h//2),colorR,cv.FILLED)
 
     cv.imshow('Image', img)
