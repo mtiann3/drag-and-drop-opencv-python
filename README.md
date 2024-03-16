@@ -1,14 +1,19 @@
-Setup Instructions:
+Project Description:
 
-Ensure you have Python installed on your system.
-Clone this repository to your local machine.
-Install the required dependencies using pip:
+The project is a simple interactive application that utilizes hand tracking to enable users to drag rectangles on the screen using their fingers. It uses the OpenCV library for webcam input and hand detection, as well as the cvzone library for additional functionalities like drawing rectangles with rounded corners.
 
-pip install opencv-python numpy
+Features:
 
-pip install cvzone
+Hand tracking: The application detects hands using computer vision techniques and tracks their movements in real time.
 
-Connect a webcam to your computer.
-Run the program by executing the Python script. You may need to adjust the webcam index (0 in cv.VideoCapture(0)) if you have multiple cameras.
-Position your hand in front of the webcam to interact with the colored rectangle.
-Press 'q' to quit the program.
+Draggable rectangles: Users can interact with the application by dragging rectangles displayed on the screen using their fingers.
+
+Interactive display: Rectangles are drawn with transparency, allowing users to see the underlying webcam feed while interacting with the rectangles.
+
+Usage:
+
+Make sure you have Python installed on your system.
+Install the required libraries by running pip install opencv-python cvzone.
+Clone the repository or download the source code.
+Run the main.py script.
+Position your hand in front of the webcam, and use your index finger to drag the rectangles displayed on the screen.
